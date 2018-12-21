@@ -1,0 +1,21 @@
+# Python binaries
+**/__pycache__/
+*.py[cod]
+
+# IPython checkpoints
+**/.ipynb_checkpoints
+
+# Latex byproducts
+*.gz
+*.aux
+*.idx
+*.out
+*.toc
+*.bcf
+*.ptc
+*.log
+*.xml
+
+# Temp files
+*.known_issues.txt
+*.imabi_intro.tex

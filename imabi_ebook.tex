@@ -1,0 +1,92 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% eBook 
+% LaTeX Template
+%
+% Original author:
+% Luis Cobo (luiscobogutierrez@gmail.com) with extensive modifications by:
+% Vel (vel@latextemplates.com)
+% https://www.latextemplates.com/template/ebook
+%
+% Modified by
+% Zulkhuu Tuya (t.zulkhuu@gmail.com) 
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT CONFIGURATIONS AND INFORMATION
+%----------------------------------------------------------------------------------------
+
+\documentclass[oneside,11pt]{memoir} % Font size
+
+\input{imabi_ebook_structure.tex} % Include the file that specifies the document structure and layout
+
+\title{IMABI} % Book title
+\author{Seth Coonrod} % Author
+\newcommand{\subtitle}{Japanese grammar guide} % Book edition
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\thispagestyle{empty} % Suppress page numbering
+%https://wall.alphacoders.com/big.php?i=713965
+\ThisCenterWallPaper{1}{figs/mt_fuji.jpg} % Add the background image, the first argument is the scaling - adjust this as necessary so the image fits the entire page
+
+\begin{tikzpicture}[remember picture,overlay]
+\node [rectangle, rounded corners, fill=white, opacity=0.75, anchor=south west, minimum width=4cm, minimum height=3cm] (box) at (-0.5,-10) (box){}; % White rectangle - "minimum width/height" adjust the width and height of the box; "(-0.5,-10)" adjusts the position on the page
+
+\node[anchor=west, color01, xshift=-1.5cm, yshift=-0.4cm, text width=3.9cm, font=\sffamily\bfseries\scshape\Large] at (box.north){\thetitle}; % "Text width" adjusts the wrapping width, "xshift/yshift" adjust the position relative to the white rectangle
+
+\node[anchor=west, color01, xshift=-1.5cm, yshift=-1.0cm, text width=3.9cm, font=\sffamily\scriptsize] at (box.north){\subtitle}; % "Text width" adjusts the wrapping width, "xshift/yshift" adjust the position relative to the white rectangle
+
+\node[anchor=west, color01, xshift=-1.5cm, yshift=-2.5cm, text width=3.9cm, font=\sffamily\bfseries] at (box.north){\theauthor}; % "Text width" adjusts the wrapping width, "xshift/yshift" adjust the position relative to the white rectangle
+\end{tikzpicture}
+
+\newpage % Make sure the following content is on a new page
+%----------------------------------------------------------------------------------------
+%	COPYRIGHT PAGE
+%----------------------------------------------------------------------------------------
+
+\newpage
+~\vfill
+\thispagestyle{empty}
+
+\noindent PDF version of lessons of \textsc{\url{www.imabi.net}} \\ % URL
+
+\noindent Image courtesy of \textsc{\url{www.pixabay.com}} \\
+
+\noindent Built from latex book template \textsc{\url{https://www.latextemplates.com/template/ebook}} \\
+
+\noindent Licensed under the Creative Commons Attribution-NonCommercial 3.0 Unported License (the ``License''). You may not use this file except in compliance with the License. You may obtain a copy of the License at \url{http://creativecommons.org/licenses/by-nc/3.0}. Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an \textsc{``as is'' basis, without warranties or conditions of any kind}, either express or implied. See the License for the specific language governing permissions and limitations under the License.\\ % License information
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\tableofcontents % Prints the table of contents
+
+%----------------------------------------------------------------------------------------
+%	INTRODUCTION SECTION
+%----------------------------------------------------------------------------------------
+
+%\pagebreak
+%\input{imabi_intro.tex}
+%\footnote{You can even use a footnote to seem smarter}.
+
+%----------------------------------------------------------------------------------------
+%	BOOK PART
+%----------------------------------------------------------------------------------------
+\pagebreak
+\input{imabi_body.tex}
+%\input{chapters/第3章/第???課:_The_Particle_に_III:_Agent_Marker.tex}
+%-----------------------------------------------------------------------------------
+
+%----------------------------------------------------------------------------------------
+
+\end{document}\grid

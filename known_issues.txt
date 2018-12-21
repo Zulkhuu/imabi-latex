@@ -1,0 +1,16 @@
+Part 2:Beginner II: 第72課:_whileiiuchi.tex
+
+Kanji reading is messed up here: (Line 154-155)
+\par{${\overset{\textnormal{}}{\text{18. \{明るい・暗}}}$ くならない\}うちに帰りなさい。(Stern) \hfill\break
+Come home \{while it's light\slash before it gets dark\}. }
+
+Replace with following lines:
+\par{18.   {$\overset{\textnormal{あか}}{\text{明}}$るい・${\overset{\textnormal{くら}}{\text{暗}}}$ くならない｝うちに帰りなさい。(Stern) \hfill\break
+Come home {while it's light/before it gets dark}. }
+
+Part 5: Advanced I: negpatterns.tex
+
+Chapter name was supposed to be like this:
+第232課: More Negative Patterns
+Semi colon is replaced with different character.
+第232課： More Negative Patterns
