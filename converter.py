@@ -56,7 +56,7 @@ class imabi_converter:
         When all pages are downloaded as html in saved_pages folder,
         this script can work offline by setting self.offline = True
         '''
-        self.save_page_content('http://www.imabi.net/tableofcontents.htm')
+        self.save_page_content('https://www.imabi.net/tableofcontents.htm')
         self.generate_toc()
         self.offline = False
         for book_part in self.toc:
@@ -70,7 +70,7 @@ class imabi_converter:
         '''
         Generate Table of Contents
         '''
-        page_content = self.read_page_content('http://www.imabi.net/tableofcontents.htm')
+        page_content = self.read_page_content('https://www.imabi.net/tableofcontents.htm')
         self.toc = []
         self.read_toc(page_content)
         self.toc.append(self.cur_book_part) #add last part
@@ -584,7 +584,7 @@ class imabi_converter:
         if self.offline:
             html = open(self.save_page_folder + '/' + path.basename(page_url)).read()
         else:
-            req = requests.get(page_url, verify=False)
+            req = requests.get(page_url, verify=True)
             if req.status_code == 200:
                 print('   Read page successful')
                 html = req.text
@@ -592,7 +592,7 @@ class imabi_converter:
                 print('   Read page failed:%s'%(page_url))
                 return None
         self.soup = BeautifulSoup(html, 'html.parser')
-        mainCols = self.soup.find_all('div', id='fw-mainColumn')
+        mainCols = self.soup.find_all('div', { "class" : "webs-main" })
         if len(mainCols) > 0:
             print('   Found main paragraph')
             return mainCols[0]
@@ -606,7 +606,7 @@ class imabi_converter:
          <page_name>.htm original file
          <page_name>_pr.htm original file with added indentations for easier reading
         '''
-        req = requests.get(page_url, verify=False)
+        req = requests.get(page_url, verify=True)
         if req.status_code == 200:
             print('Read page successful')
         else:
